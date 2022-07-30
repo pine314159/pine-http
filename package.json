@@ -1,14 +1,18 @@
 {
-  "name": "http-request",
-  "private": true,
+  "name": "pine-http",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite & json-server --watch db.json",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "doc": "typedoc --out docs core/*.ts --cleanOutputDir true",
+    "look:doc": "anywhere -d ./docs"
   },
   "devDependencies": {
+    "release-please": "^13.19.6",
+    "typedoc": "^0.23.9",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
   }

@@ -48,13 +48,16 @@ export default class HttpRequest {
   }
 
   async request (config: Config) {
-    if (!config.url) throw new Error('url is not found');
-    const c = this._mergeConfig(config);
-    const options = await this._requestInterceptor.exec(c);
-    const response = await this._adapter.send(options);
-    console.log(response);
-    const res = await this._responseInterceptor.exec(response);
-    return res;
+    try {
+      if (!config.url) throw new Error('url is not found');
+      const c = this._mergeConfig(config);
+      const options = await this._requestInterceptor.exec(c);
+      const response = await this._adapter.send(options);
+      const res = await this._responseInterceptor.exec(response);
+      return res;
+    } catch (err) {
+      return Promise.reject(HttpRequest.handleError(err))
+    }
   }
 
   setBaseUrl (baseUrl?: string) {

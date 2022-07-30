@@ -1,4 +1,4 @@
-import HttpRequest from './HttpRequest';
+import HttpRequest from '../core/HttpRequest';
 import AdapterAjax from './AdapterAjax';
 const  API_HOST = 'http://localhost:3000'
 const adapter = new AdapterAjax()
@@ -15,17 +15,16 @@ httpRequest.interceptor.request.use({
 })
 httpRequest.interceptor.response.use({
   resolveHandler: (res) => {
-    // throw new Error('error 333')
     return JSON.stringify(res)
   },
   rejectHandler: (err) => {
-    window.alert(err)
     return Promise.reject(err)
   }
 })
-httpRequest.get({url: `/post`, withCredentials: true}).then(res => {
-  console.log(res);
+httpRequest.get({url: `/posts`, withCredentials: true}).then(res => {
   showInHtml(res)
+}).catch(err => {
+  console.log(err);
 })
 
 

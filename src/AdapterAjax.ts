@@ -1,4 +1,4 @@
-import { Adapter, Config } from './types';
+import { Adapter, Config } from '../core/types';
 
 export default class AdapterAjax implements Adapter {
 
