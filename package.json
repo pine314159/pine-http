@@ -11,7 +11,7 @@
     "look:doc": "anywhere -d ./docs"
   },
   "devDependencies": {
-    "release-please": "^13.19.6",
+    "standard-version": "^9.5.0",
     "typedoc": "^0.23.9",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
