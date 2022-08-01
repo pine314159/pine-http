@@ -7,6 +7,6 @@
 # 发布流程
 git add .
 git commit -m ''
-npm run release
+npm run version
 npm run build
 npm publish
