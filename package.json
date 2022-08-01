@@ -5,6 +5,11 @@
   "description": "simple http package",
   "main": "core/HttpRequest.ts",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pine314159/pine-http.git"
+  },
+  "author": "pine314159",
   "keywords": [
     "http",
     "request"
