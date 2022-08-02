@@ -1,8 +1,8 @@
-import HttpRequest from '../core/HttpRequest';
+import PineHttp from '../core/PineHttp';
 import AdapterAjax from './AdapterAjax';
 const  API_HOST = 'http://localhost:3000'
 const adapter = new AdapterAjax()
-const httpRequest = new HttpRequest(adapter)
+const httpRequest = new PineHttp(adapter)
 httpRequest.setBaseUrl(API_HOST)
 
 httpRequest.interceptor.request.use({

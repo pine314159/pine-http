@@ -1,4 +1,7 @@
-# 封装的http请求库
+封装的http请求库
+
+# install
+`npm install pine-http -S`
 
 # 查看文档
     1. 安装anywhere
